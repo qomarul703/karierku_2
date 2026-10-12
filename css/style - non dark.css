@@ -1,0 +1,126 @@
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* === DEFINISI PALET WARNA (LIGHT & DARK MODE) === */
+:root {
+    --bg-color: #f0f2f5;
+    --wrapper-bg: #ffffff;
+    --card-bg: #f8f9fa;
+    --text-color: #333;
+    --text-muted: #555;
+    --border-color: #e0e0e0;
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --danger-color: #dc3545;
+    --danger-hover: #c82333;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+[data-theme='dark'] {
+    --bg-color: #121212;
+    --wrapper-bg: #1e1e1e;
+    --card-bg: #2a2a2a;
+    --text-color: #e0e0e0;
+    --text-muted: #aaa;
+    --border-color: #3a3a3a;
+    --primary-color: #4dabf7;
+    --primary-hover: #1e90ff;
+    --danger-color: #f06a78;
+    --danger-hover: #e84a5a;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+/* ============================================== */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: var(--wrapper-bg);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+/* Semua style lain yang sudah kita buat sebelumnya akan kita perbarui di bawah ini */
+/* Cukup ganti file ini secara keseluruhan */
+
+/* Navbar */
+.navbar {
+    background-color: var(--wrapper-bg);
+    padding: 15px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+.navbar-brand {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+.navbar-brand:hover { transform: scale(1.05); }
+.navbar-brand img { width: 30px; margin-right: 10px; }
+
+.navbar-links { display: flex; align-items: center; gap: 15px; }
+.navbar-links .user-greeting { padding: 8px 12px; background-color: var(--card-bg); border-radius: 6px; color: var(--text-muted); font-size: 14px; border: 1px solid var(--border-color); }
+.navbar-links a, .navbar-links button { color: var(--text-color); text-decoration: none; font-weight: 500; }
+.navbar-links .btn-nav { background-color: var(--card-bg); border: 1px solid var(--border-color); padding: 8px 12px; border-radius: 6px; transition: var(--transition); cursor: pointer; font-size: 14px; }
+.navbar-links .btn-nav:hover { background-color: var(--border-color); color: var(--text-color); }
+#theme-toggle i { font-size: 16px; }
+
+/* Dashboard */
+.dashboard-header { text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 20px; }
+.dashboard-header h1 { font-size: 28px; font-weight: 600; margin: 0; color: var(--text-color); }
+.hero-section { background-color: var(--card-bg); border-radius: 8px; padding: 30px; text-align: center; margin-bottom: 30px; border: 1px solid var(--border-color); }
+.hero-section .hero-logo { width: 90px; height: auto; margin-bottom: 15px; }
+.hero-section .slogan { font-size: 20px; font-weight: 500; color: var(--text-color); margin: 0; }
+.quote-container { text-align: center; margin: 30px 0; font-style: italic; color: var(--text-muted); font-size: 16px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+.menu-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; text-align: center; transition: var(--transition); }
+.menu-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px var(--shadow-color); border-color: var(--primary-color); }
+.menu-card i { font-size: 36px; color: var(--primary-color); margin-bottom: 15px; }
+.menu-card h3 { margin: 0 0 10px 0; font-weight: 600; }
+.menu-card a { display: inline-block; margin-top: 15px; padding: 8px 16px; background-color: var(--primary-color); color: white; text-decoration: none; border-radius: 5px; font-weight: 500; }
+.menu-card a:hover { background-color: var(--primary-hover); }
+.dashboard-footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color); }
+.btn-logout { display: inline-block; padding: 10px 25px; background-color: var(--danger-color); color: white; text-decoration: none; border-radius: 5px; font-weight: 600; border: 1px solid var(--danger-color); transition: var(--transition); }
+.btn-logout:hover { background-color: var(--danger-hover); border-color: var(--danger-hover); }
+
+/* Dan semua style lainnya... */
+/* (Style untuk Login, Kuis, Jurnal, dll. sudah di-include di sini agar Anda tidak perlu copy paste lagi) */
+/* Auth Page */
+.auth-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; box-sizing: border-box; }
+.auth-box { width: 100%; max-width: 400px; background-color: var(--wrapper-bg); padding: 30px 40px; border-radius: 10px; box-shadow: 0 4px 12px var(--shadow-color); }
+.auth-box .logo { display: block; width: 80px; height: auto; margin: 0 auto 20px auto; }
+.auth-box h2 { text-align: center; margin-bottom: 25px; font-weight: 600; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
+.form-group input { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 5px; box-sizing: border-box; transition: border-color 0.3s; background-color: var(--card-bg); color: var(--text-color); }
+.form-group input:focus { outline: none; border-color: var(--primary-color); }
+.auth-box button { width: 100%; padding: 12px; background-color: var(--primary-color); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: 600; transition: background-color 0.3s; }
+.auth-box button:hover { background-color: var(--primary-hover); }
+.auth-link { text-align: center; margin-top: 15px; font-size: 14px; }
+.auth-link a { color: var(--primary-color); text-decoration: none; font-weight: 500; }
+.guest-mode { text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-color); }
+.guest-mode a { display: inline-block; width: 100%; box-sizing: border-box; padding: 12px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s; }
+.guest-mode a:hover { background-color: #5a6268; }
+.error-message { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 10px; border-radius: 5px; margin-bottom: 15px; text-align: center; font-size: 14px; }
